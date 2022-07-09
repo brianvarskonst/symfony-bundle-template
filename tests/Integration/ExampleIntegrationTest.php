@@ -8,7 +8,6 @@ use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 class ExampleIntegrationTest extends KernelTestCase
 {
-
     /**
      * @todo Implement Test
      */

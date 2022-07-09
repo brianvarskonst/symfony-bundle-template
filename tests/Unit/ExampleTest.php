@@ -8,7 +8,6 @@ use Mockery\Adapter\Phpunit\MockeryTestCase;
 
 class ExampleTest extends MockeryTestCase
 {
-
     /**
      * @todo Implement Test
      */
