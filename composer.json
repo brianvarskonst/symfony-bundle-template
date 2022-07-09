@@ -1,0 +1,69 @@
+{
+    "name": "brianvarskonst/symfony-bundle-template",
+    "type": "symfony-bundle",
+    "description": "Provides a starting point for creating Symfony Bundles",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Brian Schäffner",
+            "email": "burnify.design@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "support": {
+        "issues": "https://github.com/brianvarskonst/symfony-bundle-template/issues"
+    },
+    "require": {
+        "php": ">=8.1"
+    },
+    "require-dev": {
+        "inpsyde/php-coding-standards": "^1.0",
+        "mockery/mockery": "^1.4",
+        "phpunit/phpunit": "^9.5",
+        "vimeo/psalm": "^4",
+        "psalm/plugin-mockery": "^0.9.1",
+        "lctrs/psalm-psr-container-plugin": "^1.7",
+        "marartner/psalm-strict-equality": "^1.0",
+        "php-standard-library/psalm-plugin": "^2.0",
+        "psalm/plugin-phpunit": "^0.17.0",
+        "psalm/plugin-symfony": "^3.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bvsk\\Bundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Bvsk\\Bundle\\\\Tests\\": "tests/Unit/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true,
+        "platform": {
+            "php": "8.1"
+        },
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "scripts": {
+        "cs": "@php ./vendor/bin/phpcs -s",
+        "cbf": "@php ./vendor/bin/phpcbf",
+        "psalm": "@php ./vendor/vimeo/psalm/psalm --no-cache --no-diff --no-progress --output-format=console",
+        "tests": "@php ./vendor/bin/phpunit",
+        "tests:no-cov": "@php ./vendor/bin/phpunit --no-coverage",
+        "tests:unit": "@php ./vendor/bin/phpunit --testsuite=Unit",
+        "tests:unit:no-cov": "@php ./vendor/bin/phpunit --testsuite=Unit --no-coverage",
+        "tests:integration": "@php ./vendor/bin/phpunit --testsuite=Integration",
+        "tests:integration:no-cov": "@php ./vendor/bin/phpunit --testsuite=Integration --no-coverage",
+        "qa": [
+            "@cs",
+            "@psalm",
+            "@tests"
+        ]
+    }
+}

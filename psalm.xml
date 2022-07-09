@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<psalm
+    errorLevel="6"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="https://getpsalm.org/schema/config"
+    xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
+>
+    <plugins>
+        <pluginClass class="Psalm\SymfonyPsalmPlugin\Plugin" />
+        <pluginClass class="Psalm\PhpUnitPlugin\Plugin"/>
+        <pluginClass class="Psl\Psalm\Plugin"/>
+        <pluginClass class="Lctrs\PsalmPsrContainerPlugin\Plugin"/>
+        <pluginClass class="Marartner\PsalmStrictEquality\Plugin"/>
+    </plugins>
+
+    <projectFiles>
+        <directory name="src"/>
+
+        <ignoreFiles>
+            <directory name="vendor"/>
+        </ignoreFiles>
+    </projectFiles>
+
+    <issueHandlers>
+        <PropertyNotSetInConstructor>
+            <errorLevel type="suppress">
+                <directory name="tests/Unit"/>
+            </errorLevel>
+        </PropertyNotSetInConstructor>
+    </issueHandlers>
+
+    <plugins>
+        <pluginClass class="Psalm\MockeryPlugin\Plugin"/>
+    </plugins>
+</psalm>
